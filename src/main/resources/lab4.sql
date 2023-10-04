@@ -39,7 +39,38 @@ SELECT AVG(rating) FROM bookreview;
 SELECT MIN(rating) FROM bookreview;
 SELECT MAX(rating) FROM bookreview;
 
-SELECT column, COUNT(*) FROM table GROUP BY column;
+SELECT a.name, a.surname, COUNT(*) AS total
+FROM Author a join Book b on a.id = b.author_id
+GROUP BY author_id, a.surname, a.name;
 
-SELECT column, COUNT(*) FROM table GROUP BY column
-HAVING COUNT(*) > 10;
+SELECT id, AVG(rating) as avgrating
+FROM bookreview
+GROUP BY id
+HAVING AVG(rating) > 10;
+
+SELECT name, surname
+FROM author UNION
+SELECT title, series
+FROM book;
+
+SELECT name
+FROM Author
+WHERE EXISTS (SELECT * FROM Book
+              WHERE Book.author_id = Author.id);
+
+INSERT INTO "User" (login, password)
+SELECT name, surname
+FROM Author
+WHERE LENGTH(name) > 10;
+
+SELECT name, id,
+       CASE
+           WHEN id < 10 THEN 'Old'
+           WHEN id >= 10 AND id < 20 THEN 'New'
+           ELSE 'Very new'
+           END AS idgroup
+FROM author;
+
+EXPLAIN SELECT *
+        FROM author
+        WHERE id = 3;
