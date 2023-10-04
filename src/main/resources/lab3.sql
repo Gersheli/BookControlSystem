@@ -45,3 +45,7 @@ DELETE FROM Publisher WHERE id = 1;
 SELECT id, year, quantity, price FROM BookIssue;
 UPDATE BookIssue SET price = 24.99 WHERE id = 1;
 DELETE FROM BookIssue WHERE id = 1;
+
+-- ИНДЕКСЫ
+CREATE INDEX RatingIndex ON BookReview(rating);
+CREATE INDEX NameSurnameIndex ON author(surname, name);

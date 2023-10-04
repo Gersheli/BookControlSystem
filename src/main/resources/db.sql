@@ -248,9 +248,9 @@ VALUES (5, 'Иногда лучший способ погубить челове
 INSERT INTO BookReview (user_id, book_id, rating, contents)
 VALUES (1, 2, 50, 'норм');
 INSERT INTO BookReview (user_id, book_id, rating, contents)
-VALUES (1, 4, 50, 'так се');
+VALUES (1, 4, 30, 'так се');
 INSERT INTO BookReview (user_id, book_id, rating, contents)
-VALUES (2, 2, 50, 'супер');
+VALUES (2, 2, 70, 'супер');
 
 -- ЗАПОЛНЕНИЕ ТАБЛИЦЫ Publisher ТЕСТОВЫМИ ЗНАЧЕНИЯМИ
 INSERT INTO Publisher (name, address, phone) VALUES ('Эксмо', 'wwwwww', '+12345678');

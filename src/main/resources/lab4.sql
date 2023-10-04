@@ -1,3 +1,6 @@
+SELECT FROM Book
+WHERE genre_id IS NOT NULL;
+
 -- Несколько условий (см. lab3)
 select * from author where name='' and surname='';
 
