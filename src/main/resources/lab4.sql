@@ -58,12 +58,10 @@ FROM book;
 
 SELECT name
 FROM Author
-WHERE EXISTS (SELECT * FROM Book
-              WHERE Book.author_id = Author.id);
+WHERE EXISTS (SELECT * FROM Book WHERE Book.author_id = Author.id);
 
 INSERT INTO "User" (login, password)
-SELECT name, surname
-FROM Author
+SELECT name, surname FROM Author
 WHERE LENGTH(name) > 10;
 
 SELECT name, id,
